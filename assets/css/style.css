@@ -1,0 +1,36 @@
+.game-area {
+    background-color: beige;
+    width: 85%;
+    height: 80vh;
+    max-height: 500px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+}
+
+div h2 {
+    text-align: center;
+}
+
+.start {
+    border-radius: 20px;
+    border: 1px;
+    background-color: chocolate;
+}
+
+/** Buttons styling section **/
+.btn {
+    width: 200px;
+    height: 60px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+}
+
+/** needs fixing/researching **/
+#name-entry {
+    position: relative;
+    left: 40%;
+}
+
