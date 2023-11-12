@@ -18,15 +18,18 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Music Quiz</title>
   </head>
   <body>
-    <!-- Logo and actual quiz name to be added here-->
-    <h1>Music Quiz</h1>
     <!-- Instructions Section -->
-    <section id="start-area">
+    <section id="start-area" class="center-text">
+        <h1>Music Quiz</h1>
         <div class="instructions">
             <p>Test your music knowledge with this short quiz, running you through the past 5 decades, where music was 
                 really brought to life!
@@ -38,20 +41,19 @@
             </p>
             <p>Yourself and Milo will each have a score tally (if you give him the chance to answer!)</p>
         </div>
-    </section>
-    <!-- Enter Username Form & Submit Button -->
-    <form id="username-entry" action="quiz" method="post">
-        <div>
-            <label for="username" class="username-label">Please enter your player name:</label>
-            <br>
-            <input type="text" id="username" name="username" placeholder="Enter Name" required>
-            <br>
-        </div>    
+        <form id="username-entry" action="quiz" method="post">
+            <div>
+                <label for="username" class="username-label">Please enter your player name:</label>
+                <br>
+                <input type="text" id="username" name="username" placeholder="Enter Name" required>
+                <br>
+            </div>    
         <button type="submit" id="launch-game" class="btn">Let's Go!</button>
-    </form>
+        </form>
+    </section>
     <!-- Game area -->
     <!-- Score Section & Timer -->
-    <section id="game-area">
+    <section id="game-area" class="center-text">
         <div id="user-score">
             <p>Name: <span id="users-name"></span></p>
             <p>Correct Answers: <span id="users-correct"></span></p>
