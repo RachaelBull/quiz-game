@@ -20,22 +20,29 @@
     <link rel="manifest" href="assets/favicon/site.webmanifest">
     <!-- CSS Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css" />
-    <title>Document</title>
+    <title>Music Quiz</title>
   </head>
   <body>
     <!-- Logo and actual quiz name to be added here-->
     <h1>Music Quiz</h1>
-
-    <section>
-
+    <!-- Instructions Section -->
+    <section id="start-area">
+        <div class="instructions">
+            <p>Test your music knowledge with this short quiz, running you through the past 5 decades, where music was 
+                really brought to life!
+            </p>
+            <p>This quiz however is timed, you will have 12 seconds to choose your answer</p>
+            <p>If you answer correctly within the time frame then you will procceed to the next question.</p>
+            <p>However, if you answer incorrectly or run out of time before selecting an answer then the 
+                question will be passed onto our keen competitor to answer instead, Milo!
+            </p>
+            <p>Yourself and Milo will each have a score tally (if you give him the chance to answer!)</p>
+        </div>
     </section>
-
-      <input type="name" id="name-entry" />
-      <br />
-
-      <button class="btn start" type="submit">Start</button>
-    </div>
-
+    <!-- Enter Username -->
+    <form id="username-entry" action="quiz" method="post">
+        
+    </form>
     <script src="assets/js/script.js"></script>
   </body>
 </html>
