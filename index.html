@@ -39,9 +39,15 @@
             <p>Yourself and Milo will each have a score tally (if you give him the chance to answer!)</p>
         </div>
     </section>
-    <!-- Enter Username -->
+    <!-- Enter Username Form & Submit Button -->
     <form id="username-entry" action="quiz" method="post">
-        
+        <div>
+            <label for="username" class="username-label">Please enter your player name:</label>
+            <br>
+            <input type="text" id="username" name="username" placeholder="Enter Name" required>
+            <br>
+        </div>    
+        <button type="submit" id="launch-game" class="btn">Let's Go!</button>
     </form>
     <script src="assets/js/script.js"></script>
   </body>
