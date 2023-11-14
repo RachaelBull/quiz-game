@@ -18,6 +18,91 @@ function startGame(event) {
     document.getElementById("start-area").style.display = 'none';
     document.getElementById("game-area").style.display = '';
 }
-
+// To display a new section upon form submission
 let formComplete = document.getElementById("username-entry");
 formComplete.addEventListener('submit', startGame);
+
+// Quiz Questions
+const gameQuestions = [
+    {
+        question: 'Who was named the King of Pop?',
+        answers: [
+            { text: 'Bill Withers', correct: false },
+            { text: 'Michael Jackson', correct: correct },
+            { text: 'Prince', correct: false },
+            { text: 'Stevie Wonder', correct: false },
+        ]
+    },
+    {
+        question: 'Who was the lead singer of Queen?',
+        answers: [
+            { text: 'Steven Tyler', correct: false },
+            { text: 'David Bowie', correct: false },
+            { text: 'Freddie Mercury', correct: true },
+            { text: 'Jim Morrison', correct: false },
+        ]
+    },
+    {
+        question: 'Which one of these songs are by Fleetwood Mac?',
+        answers: [
+            { text: "Can't Stop", correct: false },
+            { text: 'Brown Eyed Girl', correct: false },
+            { text: 'Take Me Out', correct: false },
+            { text: 'Dreams', correct: true },
+        ]
+    },
+    {
+        question: 'Which rapper had a UK no.1 hit with the song "Lose Yourself"?',
+        answers: [
+            { text: 'Jay-Z', correct: false },
+            { text: 'Eminem', correct: true },
+            { text: 'Kanye West', correct: false },
+            { text: 'Drake', correct: false },
+        ]
+    },
+    {
+        question: "Who's mom had it going on?",
+        answers: [
+            { text: "Stacy's", correct: true },
+            { text: "Jane's", correct: false },
+            { text: "Lisa's", correct: false },
+            { text: "Amy's", correct: false },
+        ]
+    },
+    {
+        question: 'Which girl group was Beyonce a part of?',
+        answers: [
+            { text: 'Atomic Kitten', correct: false },
+            { text: 'Little Mix', correct: false },
+            { text: 'Pussycat Dolls', correct: false },
+            { text: "Destiny's Child", correct: true },
+        ]
+    },
+    {
+        question: 'Which one of these songs was a UK no.1 hit single by Prince?',
+        answers: [
+            { text: 'Purple Rain', correct: false },
+            { text: 'When Doves Cry', correct: false },
+            { text: 'The Most Beautiful Girl In The World', correct: true },
+            { text: 'Kiss', correct: false },
+        ]
+    },
+    {
+        question: 'Which rock guitarist played on the Michael Jackson song "Beat It"?',
+        answers: [
+            { text: 'Eddie Van Halen', correct: true },
+            { text: 'Jeff Beck', correct: false },
+            { text: 'Steve Howe', correct: false },
+            { text: 'Slash', correct: false },
+        ]
+    },
+    {
+        question: 'Which artist sang "At Last"?',
+        answers: [
+            { text: 'Whitney Houston', correct: false },
+            { text: 'Tina Turner', correct: false },
+            { text: 'Celine Dion', correct: false },
+            { text: 'Etta James', correct: true },
+        ]
+    }
+]
