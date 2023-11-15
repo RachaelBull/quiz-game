@@ -107,7 +107,12 @@ let gameQuestions = [
     }
 ]
 
-var randomQuestion;
+// Score keeping and question control variables
+let answeredCorrect = document.getElementById('users-correct');
+let answeredIncorrect = document.getElementById('users-incorrect');
+let computerAnsweredCorrect = document.getElementById('milo-correct');
+let computerAnsweredIncorrect = document.getElementById('milo-incorrect');
+let questionOrder = 0;
 
 // Restart Game Button
 let restartGame = document.getElementById('restart-game');
@@ -120,9 +125,23 @@ const answerChoices = document.getElementById('answer-options');
 const nextQuestion = document.getElementById('continue');
 const checkList = [];
 
-
+function startQuestionDisplay() {
+    questionOrder = 0;
+    answeredCorrect.innerText = 0;
+    answeredIncorrect.innerText = 0;
+    computerAnsweredCorrect.innerText = 0;
+    computerAnsweredIncorrect.innerText = 0;
+    displayRandomOrder();
+}
 
 function displayRandomOrder() {
-    let randomisedQuestion = gameQuestions[Math.floor(Math.random() * gameQuestions.length)];
-    randomQuestion = gameQuestions[displayRandomOrder];
+    const randomisedQuestion = gameQuestions[Math.floor(Math.random() * gameQuestions.length)];
+    if (!checkList.includes(randomQuestion)) {
+        checkList.push(randomQuestion);
+        questionLineBox.innerHTML = randomQuestion.question;
+    }
+
 }
+
+startQuestionDisplay();
+displayRandomOrder();
