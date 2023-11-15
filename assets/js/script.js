@@ -23,7 +23,7 @@ let formComplete = document.getElementById("username-entry");
 formComplete.addEventListener('submit', startGame);
 
 // Quiz Questions
-const gameQuestions = [
+let gameQuestions = [
     {
         question: 'Who was named the King of Pop?',
         answers: [
@@ -106,3 +106,18 @@ const gameQuestions = [
         ]
     }
 ]
+// Restart Game Button
+let restartGame = document.getElementById('restart-game');
+restartGame.addEventListener('click', restart);
+
+
+// Assigning interaction to buttons and display divs
+const questionLineBox = document.getElementById('questions-line');
+const answerChoices = document.getElementById('answer-options');
+const nextQuestion = document.getElementById('continue');
+const checkList = [];
+
+function questionRandomOrder() {
+    let randomisedQuestion = gameQuestions[Math.floor(Math.random() * gameQuestions.length)];
+
+}
