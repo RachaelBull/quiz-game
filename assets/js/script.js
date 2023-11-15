@@ -27,85 +27,88 @@ let gameQuestions = [
     {
         question: 'Who was named the King of Pop?',
         answers: [
-            { text: 'Bill Withers', correct: false },
-            { text: 'Michael Jackson', correct: correct },
-            { text: 'Prince', correct: false },
-            { text: 'Stevie Wonder', correct: false },
+            { option: 'Bill Withers', correct: false },
+            { option: 'Michael Jackson', correct: correct },
+            { option: 'Prince', correct: false },
+            { option: 'Stevie Wonder', correct: false },
         ]
     },
     {
         question: 'Who was the lead singer of Queen?',
         answers: [
-            { text: 'Steven Tyler', correct: false },
-            { text: 'David Bowie', correct: false },
-            { text: 'Freddie Mercury', correct: true },
-            { text: 'Jim Morrison', correct: false },
+            { option: 'Steven Tyler', correct: false },
+            { option: 'David Bowie', correct: false },
+            { option: 'Freddie Mercury', correct: true },
+            { option: 'Jim Morrison', correct: false },
         ]
     },
     {
         question: 'Which one of these songs are by Fleetwood Mac?',
         answers: [
-            { text: "Can't Stop", correct: false },
-            { text: 'Brown Eyed Girl', correct: false },
-            { text: 'Take Me Out', correct: false },
-            { text: 'Dreams', correct: true },
+            { option: "Can't Stop", correct: false },
+            { option: 'Brown Eyed Girl', correct: false },
+            { option: 'Take Me Out', correct: false },
+            { option: 'Dreams', correct: true },
         ]
     },
     {
         question: 'Which rapper had a UK no.1 hit with the song "Lose Yourself"?',
         answers: [
-            { text: 'Jay-Z', correct: false },
-            { text: 'Eminem', correct: true },
-            { text: 'Kanye West', correct: false },
-            { text: 'Drake', correct: false },
+            { option: 'Jay-Z', correct: false },
+            { option: 'Eminem', correct: true },
+            { option: 'Kanye West', correct: false },
+            { option: 'Drake', correct: false },
         ]
     },
     {
         question: "Who's mom had it going on?",
         answers: [
-            { text: "Stacy's", correct: true },
-            { text: "Jane's", correct: false },
-            { text: "Lisa's", correct: false },
-            { text: "Amy's", correct: false },
+            { option: "Stacy's", correct: true },
+            { option: "Jane's", correct: false },
+            { option: "Lisa's", correct: false },
+            { option: "Amy's", correct: false },
         ]
     },
     {
         question: 'Which girl group was Beyonce a part of?',
         answers: [
-            { text: 'Atomic Kitten', correct: false },
-            { text: 'Little Mix', correct: false },
-            { text: 'Pussycat Dolls', correct: false },
-            { text: "Destiny's Child", correct: true },
+            { option: 'Atomic Kitten', correct: false },
+            { option: 'Little Mix', correct: false },
+            { option: 'Pussycat Dolls', correct: false },
+            { option: "Destiny's Child", correct: true },
         ]
     },
     {
         question: 'Which one of these songs was a UK no.1 hit single by Prince?',
         answers: [
-            { text: 'Purple Rain', correct: false },
-            { text: 'When Doves Cry', correct: false },
-            { text: 'The Most Beautiful Girl In The World', correct: true },
-            { text: 'Kiss', correct: false },
+            { option: 'Purple Rain', correct: false },
+            { option: 'When Doves Cry', correct: false },
+            { option: 'The Most Beautiful Girl In The World', correct: true },
+            { option: 'Kiss', correct: false },
         ]
     },
     {
         question: 'Which rock guitarist played on the Michael Jackson song "Beat It"?',
         answers: [
-            { text: 'Eddie Van Halen', correct: true },
-            { text: 'Jeff Beck', correct: false },
-            { text: 'Steve Howe', correct: false },
-            { text: 'Slash', correct: false },
+            { option: 'Eddie Van Halen', correct: true },
+            { option: 'Jeff Beck', correct: false },
+            { option: 'Steve Howe', correct: false },
+            { option: 'Slash', correct: false },
         ]
     },
     {
         question: 'Which artist sang "At Last"?',
         answers: [
-            { text: 'Whitney Houston', correct: false },
-            { text: 'Tina Turner', correct: false },
-            { text: 'Celine Dion', correct: false },
-            { text: 'Etta James', correct: true },
+            { option: 'Whitney Houston', correct: false },
+            { option: 'Tina Turner', correct: false },
+            { option: 'Celine Dion', correct: false },
+            { option: 'Etta James', correct: true },
         ]
     }
 ]
+
+var randomQuestion;
+
 // Restart Game Button
 let restartGame = document.getElementById('restart-game');
 restartGame.addEventListener('click', restart);
@@ -117,7 +120,9 @@ const answerChoices = document.getElementById('answer-options');
 const nextQuestion = document.getElementById('continue');
 const checkList = [];
 
-function questionRandomOrder() {
-    let randomisedQuestion = gameQuestions[Math.floor(Math.random() * gameQuestions.length)];
 
+
+function displayRandomOrder() {
+    let randomisedQuestion = gameQuestions[Math.floor(Math.random() * gameQuestions.length)];
+    randomQuestion = gameQuestions[displayRandomOrder];
 }
