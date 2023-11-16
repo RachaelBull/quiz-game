@@ -116,8 +116,8 @@ let currentQuestionIndex = 0;
 
 const checkList = [];
 // Targetting user score elements
-let answeredCorrect = document.getElementById('users-correct');
-let answeredIncorrect = document.getElementById('users-incorrect');
+let answeredCorrect = document.getElementById("users-correct");
+let answeredIncorrect = document.getElementById("users-incorrect");
 let questionIndex = 0;
 
 function quizStartUp() {
@@ -164,6 +164,28 @@ function selectAnswer(e) {
     }
 }
 
-nextButton.addEventListener
+function showScore() {
+    resetState();
+    questionArea.innerHTML = `You scored ${answeredCorrect} out of ${gameQuestions.length}!`;
+    nextButton.innerHTML = "Play Again";
+    nextButton.style.display = "block";
+}
+
+function handleNextButton() {
+    currentQuestionIndex++;
+    if(currentQuestionIndex < gameQuestions.length) {
+        showQuestion();
+    } else {
+        showScore();
+    }
+}
+
+nextButton.addEventListener("click", ()=> {
+    if(currentQuestionIndex < gameQuestions.length) {
+        handleNextButton();
+    } else {
+        startGame();
+    }
+});
 
 quizStartUp();

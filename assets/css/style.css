@@ -55,11 +55,13 @@ body {
 }
 
 .btn {
-    font-size: 1.2rem;
-    width: 200px;
-    margin-top: 10px;
-    height: 60px;
-    text-transform: uppercase;
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+    border-radius: 4px;
 }
 
 .option {
@@ -68,9 +70,9 @@ body {
     border: 1px solid #000000;
     padding: 10px;
     margin: 10px 0;
-    text-align: left;
     border-radius: 5px;
     background-color: bisque;
+    display: grid;
 }
 
 .option:hover {
@@ -86,4 +88,9 @@ body {
     margin: 20px auto 0;
     border-radius: 4px;
     display: block;
+}
+
+#answer-options {
+    width: 75%;
+    padding-left: 25%;
 }
