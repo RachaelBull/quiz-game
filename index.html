@@ -31,15 +31,10 @@
     <section id="start-area" class="center-text">
         <h1>Music Quiz</h1>
         <div class="instructions">
-            <p>Test your music knowledge with this short quiz, running you through the past 5 decades, where music was
-                really brought to life!
+            <p>Test your music knowledge with this short quiz, running you through numerous decades!
             </p>
             <p>This quiz however is timed, you will have 12 seconds to choose your answer</p>
-            <p>If you answer correctly within the time frame then you will procceed to the next question.</p>
-            <p>However, if you answer incorrectly or run out of time before selecting an answer then the
-               question will be passed onto our keen competitor to answer instead, Milo!
-            </p>
-                <p>Yourself and Milo will each have a score tally (if you give him the chance to answer!)</p>
+            <p>You will find out how well you scored when you reach the end of the quiz, where you can try again!</p>
             </div>
         <form id="username-entry" action="quiz" method="post">
             <div>
@@ -48,7 +43,7 @@
                 <input type="text" id="username" name="username" placeholder="Enter Name" required>
                 <br>
             </div>
-            <button type="submit" id="launch-game" class="btn" onclick="quizStartUp()">Let's Go!</button>
+            <button type="submit" id="launch-game" class="btn">Let's Go!</button>
         </form>
     </section>
     <!-- Game area -->
@@ -56,13 +51,8 @@
     <section id="game-area" class="center-text">
         <div id="user-score">
             <p>Name: <span id="users-name"></span></p>
-            <p>Correct Answers: <span id="users-correct"></span></p>
-            <p>Incorrect Answers: <span id="users-incorrect"></span></p>
-        </div>
-        <div id="milo-score">
-            <p>Name: Milo</p>
-            <p>Correct Answers: <span id="milo-correct"></span></p>
-            <p>Incorrect Answers: <span id="milo-incorrect"></span></p>
+            <p><span id="users-correct"></span></p>
+            <p><span id="users-incorrect"></span></p>
         </div>
         <div id="countdown-area">
             <p id="timer-both"><span id="timer">0</span></p>
@@ -78,9 +68,6 @@
                 </div> 
             <button id="continue">Next question...</button>
             </div>
-        </div>
-        <div>
-            <button id="restart-game">Restart</button>
         </div>
     </section>
     <script src="assets/js/script.js"></script>

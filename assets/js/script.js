@@ -139,7 +139,7 @@ function showQuestion() {
         button.innerHTML = answer.text;
         button.classList.add("btn");
         answerOptions.appendChild(button);
-        if(answer.correct) {
+        if (answer.correct) {
             button.dataset.correct = answer.correct;
         }
         button.addEventListener("click", selectAnswer);
@@ -173,18 +173,18 @@ function showScore() {
 
 function handleNextButton() {
     currentQuestionIndex++;
-    if(currentQuestionIndex < gameQuestions.length) {
+    if (currentQuestionIndex < gameQuestions.length) {
         showQuestion();
     } else {
         showScore();
     }
 }
 
-nextButton.addEventListener("click", ()=> {
-    if(currentQuestionIndex < gameQuestions.length) {
+nextButton.addEventListener("click", () => {
+    if (currentQuestionIndex < gameQuestions.length) {
         handleNextButton();
     } else {
-        startGame();
+        quizStartUp();
     }
 });
 
