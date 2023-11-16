@@ -27,28 +27,28 @@
     <title>Music Quiz</title>
   </head>
   <body>
-    <!-- Instructions Section -->
+        <!-- Instructions Section -->
     <section id="start-area" class="center-text">
         <h1>Music Quiz</h1>
         <div class="instructions">
-            <p>Test your music knowledge with this short quiz, running you through the past 5 decades, where music was 
+            <p>Test your music knowledge with this short quiz, running you through the past 5 decades, where music was
                 really brought to life!
             </p>
             <p>This quiz however is timed, you will have 12 seconds to choose your answer</p>
             <p>If you answer correctly within the time frame then you will procceed to the next question.</p>
-            <p>However, if you answer incorrectly or run out of time before selecting an answer then the 
-                question will be passed onto our keen competitor to answer instead, Milo!
+            <p>However, if you answer incorrectly or run out of time before selecting an answer then the
+               question will be passed onto our keen competitor to answer instead, Milo!
             </p>
-            <p>Yourself and Milo will each have a score tally (if you give him the chance to answer!)</p>
-        </div>
+                <p>Yourself and Milo will each have a score tally (if you give him the chance to answer!)</p>
+            </div>
         <form id="username-entry" action="quiz" method="post">
             <div>
                 <label for="username" class="username-label">Please enter your player name:</label>
                 <br>
                 <input type="text" id="username" name="username" placeholder="Enter Name" required>
                 <br>
-            </div>    
-        <button type="submit" id="launch-game" class="btn">Let's Go!</button>
+            </div>
+            <button type="submit" id="launch-game" class="btn" onclick="quizStartUp()">Let's Go!</button>
         </form>
     </section>
     <!-- Game area -->
@@ -69,15 +69,15 @@
         </div>
         <div id="questions-zone">
             <div>
-                <p id="questions-line" class="question-box"></p>
-            </div>
-            <div id="answer-options">
-                <button class="btn">Option One</button>
-                <button class="btn">Option Two</button>
-                <button class="btn">Option Three</button>
-                <button class="btn">Option Four</button>
-            </div>
+                <h2 id="question">Question goes here</h2>
+                <div id="answer-options">
+                    <button class="btn option">Option One</button>
+                    <button class="btn option">Option Two</button>
+                    <button class="btn option">Option Three</button>
+                    <button class="btn option">Option Four</button>
+                </div> 
             <button id="continue">Next question...</button>
+            </div>
         </div>
         <div>
             <button id="restart-game">Restart</button>

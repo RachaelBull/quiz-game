@@ -1,7 +1,7 @@
 // Specifying which sections to hide upon initial page load
 function initialLoad() {
     document.getElementById("game-area").style.display = 'none';
-// Sets the input field as the focus upon page loadup
+    // Sets the input field as the focus upon page loadup
     document.getElementById("username").focus();
 }
 
@@ -10,11 +10,11 @@ initialLoad();
 const playerEntryValue = document.getElementById("users-name");
 
 function startGame(event) {
-// Stops the error page being shown after submission - fixed bug    
+    // Stops the error page being shown after submission - fixed bug    
     event.preventDefault();
     const usersName = document.getElementById("username");
     playerEntryValue.textContent = usersName.value;
-// To display the game area and hide the start instructions section
+    // To display the game area and hide the start instructions section
     document.getElementById("start-area").style.display = 'none';
     document.getElementById("game-area").style.display = '';
 }
@@ -25,123 +25,128 @@ formComplete.addEventListener('submit', startGame);
 // Quiz Questions
 let gameQuestions = [
     {
-        question: 'Who was named the King of Pop?',
+        question: "Who was named the King of Pop?",
         answers: [
-            { option: 'Bill Withers', correct: false },
-            { option: 'Michael Jackson', correct: correct },
-            { option: 'Prince', correct: false },
-            { option: 'Stevie Wonder', correct: false },
+            { text: "Bill Withers", correct: false },
+            { text: "Michael Jackson", correct: true },
+            { text: "Prince", correct: false },
+            { text: "Stevie Wonder", correct: false },
         ]
     },
     {
-        question: 'Who was the lead singer of Queen?',
+        question: "Who was the lead singer of Queen?",
         answers: [
-            { option: 'Steven Tyler', correct: false },
-            { option: 'David Bowie', correct: false },
-            { option: 'Freddie Mercury', correct: true },
-            { option: 'Jim Morrison', correct: false },
+            { text: "Steven Tyler", correct: false },
+            { text: "David Bowie", correct: false },
+            { text: "Freddie Mercury", correct: true },
+            { text: "Jim Morrison", correct: false },
         ]
     },
     {
-        question: 'Which one of these songs are by Fleetwood Mac?',
+        question: "Which one of these songs are by Fleetwood Mac?",
         answers: [
-            { option: "Can't Stop", correct: false },
-            { option: 'Brown Eyed Girl', correct: false },
-            { option: 'Take Me Out', correct: false },
-            { option: 'Dreams', correct: true },
+            { text: "Can't Stop", correct: false },
+            { text: "Brown Eyed Girl", correct: false },
+            { text: "Take Me Out", correct: false },
+            { text: "Dreams", correct: true },
         ]
     },
     {
-        question: 'Which rapper had a UK no.1 hit with the song "Lose Yourself"?',
+        question: "Which rapper had a UK no.1 hit with the song 'Lose Yourself'?",
         answers: [
-            { option: 'Jay-Z', correct: false },
-            { option: 'Eminem', correct: true },
-            { option: 'Kanye West', correct: false },
-            { option: 'Drake', correct: false },
+            { text: "Jay-Z", correct: false },
+            { text: "Eminem", correct: true },
+            { text: "Kanye West", correct: false },
+            { text: "Drake", correct: false },
         ]
     },
     {
         question: "Who's mom had it going on?",
         answers: [
-            { option: "Stacy's", correct: true },
-            { option: "Jane's", correct: false },
-            { option: "Lisa's", correct: false },
-            { option: "Amy's", correct: false },
+            { text: "Stacy's", correct: true },
+            { text: "Jane's", correct: false },
+            { text: "Lisa's", correct: false },
+            { text: "Amy's", correct: false },
         ]
     },
     {
-        question: 'Which girl group was Beyonce a part of?',
+        question: "Which girl group was Beyonce a part of?",
         answers: [
-            { option: 'Atomic Kitten', correct: false },
-            { option: 'Little Mix', correct: false },
-            { option: 'Pussycat Dolls', correct: false },
-            { option: "Destiny's Child", correct: true },
+            { text: "Atomic Kitten", correct: false },
+            { text: "Little Mix", correct: false },
+            { text: "Pussycat Dolls", correct: false },
+            { text: "Destiny's Child", correct: true },
         ]
     },
     {
-        question: 'Which one of these songs was a UK no.1 hit single by Prince?',
+        question: "Which one of these songs was a UK no.1 hit single by Prince?",
         answers: [
-            { option: 'Purple Rain', correct: false },
-            { option: 'When Doves Cry', correct: false },
-            { option: 'The Most Beautiful Girl In The World', correct: true },
-            { option: 'Kiss', correct: false },
+            { text: "Purple Rain", correct: false },
+            { text: "When Doves Cry", correct: false },
+            { text: "The Most Beautiful Girl In The World", correct: true },
+            { text: "Kiss", correct: false },
         ]
     },
     {
-        question: 'Which rock guitarist played on the Michael Jackson song "Beat It"?',
+        question: "Which rock guitarist played on the Michael Jackson song 'Beat It'?",
         answers: [
-            { option: 'Eddie Van Halen', correct: true },
-            { option: 'Jeff Beck', correct: false },
-            { option: 'Steve Howe', correct: false },
-            { option: 'Slash', correct: false },
+            { text: "Eddie Van Halen", correct: true },
+            { text: "Jeff Beck", correct: false },
+            { text: "Steve Howe", correct: false },
+            { text: "Slash", correct: false },
         ]
     },
     {
-        question: 'Which artist sang "At Last"?',
+        question: "Which artist sang 'At Last'?",
         answers: [
-            { option: 'Whitney Houston', correct: false },
-            { option: 'Tina Turner', correct: false },
-            { option: 'Celine Dion', correct: false },
-            { option: 'Etta James', correct: true },
+            { text: "Whitney Houston", correct: false },
+            { text: "Tina Turner", correct: false },
+            { text: "Celine Dion", correct: false },
+            { text: "Etta James", correct: true },
         ]
     }
-]
+];
 
-// Score keeping and question control variables
+const questionArea = document.getElementById("question");
+const answerOptions = document.getElementById("answer-options");
+const nextButton = document.getElementById("continue");
+
+let currentQuestionIndex = 0;
+let userScore = 0;
+
+
+const checkList = [];
+// Targetting user score elements
 let answeredCorrect = document.getElementById('users-correct');
 let answeredIncorrect = document.getElementById('users-incorrect');
-let computerAnsweredCorrect = document.getElementById('milo-correct');
-let computerAnsweredIncorrect = document.getElementById('milo-incorrect');
-let questionOrder = 0;
+let questionIndex = 0;
 
-// Restart Game Button
-let restartGame = document.getElementById('restart-game');
-restartGame.addEventListener('click', restart);
-
-
-// Assigning interaction to buttons and display divs
-const questionLineBox = document.getElementById('questions-line');
-const answerChoices = document.getElementById('answer-options');
-const nextQuestion = document.getElementById('continue');
-const checkList = [];
-
-function startQuestionDisplay() {
-    questionOrder = 0;
-    answeredCorrect.innerText = 0;
-    answeredIncorrect.innerText = 0;
-    computerAnsweredCorrect.innerText = 0;
-    computerAnsweredIncorrect.innerText = 0;
-    displayRandomOrder();
+function quizStartUp() {
+    currentQuestionIndex = 0;
+    userScore = 0;
+    nextButton.innerHTML = "Next";
+    showQuestion();
 }
 
-function displayRandomOrder() {
-    const randomisedQuestion = gameQuestions[Math.floor(Math.random() * gameQuestions.length)];
-    if (!checkList.includes(randomQuestion)) {
-        checkList.push(randomQuestion);
-        questionLineBox.innerHTML = randomQuestion.question;
-    }
+function showQuestion() {
+    resetState();
+    let currentQuestion = gameQuestions[currentQuestionIndex];
+    let questionNo = currentQuestionIndex + 1;
+    questionArea.innerHTML = questionNo + ". " + currentQuestion.question;
 
+    currentQuestion.answers.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerHTML = answer.text;
+        button.classList.add("btn");
+        answerOptions.appendChild(button);
+    });
 }
 
-startQuestionDisplay();
-displayRandomOrder();
+function resetState() {
+    nextButton.style.display = "none";
+    while (answerOptions.firstChild) {
+        answerOptions.removeChild(answerOptions.firstChild);
+    };
+}
+
+quizStartUp();
