@@ -112,7 +112,6 @@ const answerOptions = document.getElementById("answer-options");
 const nextButton = document.getElementById("continue");
 
 let currentQuestionIndex = 0;
-let userScore = 0;
 
 
 const checkList = [];
@@ -123,7 +122,8 @@ let questionIndex = 0;
 
 function quizStartUp() {
     currentQuestionIndex = 0;
-    userScore = 0;
+    answeredCorrect = 0;
+    answeredIncorrect = 0;
     nextButton.innerHTML = "Next";
     showQuestion();
 }
@@ -139,14 +139,31 @@ function showQuestion() {
         button.innerHTML = answer.text;
         button.classList.add("btn");
         answerOptions.appendChild(button);
+        if(answer.correct) {
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener("click", selectAnswer);
     });
 }
 
 function resetState() {
-    nextButton.style.display = "none";
     while (answerOptions.firstChild) {
         answerOptions.removeChild(answerOptions.firstChild);
     };
 }
+
+function selectAnswer(e) {
+    const selectedBtn = e.target;
+    const isCorrect = selectedBtn.dataset.correct === "true";
+    if (isCorrect) {
+        selectedBtn.classList.add("correct");
+        answeredCorrect++;
+    } else {
+        selectedBtn.classList.add("incorrect");
+        answeredIncorrect++;
+    }
+}
+
+nextButton.addEventListener
 
 quizStartUp();
