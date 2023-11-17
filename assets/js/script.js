@@ -17,6 +17,8 @@ function startGame(event) {
     // To display the game area and hide the start instructions section
     document.getElementById("start-area").style.display = 'none';
     document.getElementById("game-area").style.display = '';
+
+    startCountdown();
 }
 // To display a new section upon form submission
 let formComplete = document.getElementById("username-entry");
@@ -178,6 +180,17 @@ function handleNextButton() {
     } else {
         showScore();
     }
+}
+
+function startCountdown() {
+    var countBegin = 12;
+    timer = setInterval(function() {
+        document.getElementById("timer").innerHTML = countBegin;
+        countBegin--;
+        if (countBegin < 0) {
+            clearInterval(timer);
+        }
+    }, 1000);
 }
 
 nextButton.addEventListener("click", () => {
