@@ -47,6 +47,10 @@ body {
     font-weight: bold;
 }
 
+#username-entry {
+    padding: 20px;
+}
+
 #username {
     font-size: 1.5rem;
     width: 300px;
@@ -55,24 +59,49 @@ body {
 }
 
 .btn {
-    font-weight: 500;
+    font-weight: bolder;
     width: 100%;
     border: 1px solid;
     padding: 10px;
     margin: 10px 0;
     text-align: center;
     border-radius: 4px;
+    background-color: rgb(217, 217, 217);
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 2px;
 }
 
-.option {
-    font-weight: 500;
-    width: 50%;
-    border: 1px solid #000000;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 5px;
-    background-color: bisque;
-    display: grid;
+#launch-game {
+    width: 25%;
+    height: 50px;
+    text-transform: uppercase;
+}
+
+#game-area {
+    max-width: 700px;
+    border: 2px solid #000000;
+    background-color: rgb(38, 38, 38, .9);
+    position: relative;
+    top: 20%;
+    margin: auto;
+    padding: 30px;
+}
+
+#user-score {
+    text-transform: uppercase;
+    padding: 20px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    font-size: 150%;
+}
+
+#countdown-area {
+    padding: 20px;
+    font-size: 100%;
+}
+
+#question {
+    padding-bottom: 15px;
 }
 
 .option:hover {
