@@ -196,6 +196,7 @@ function startCountdown() {
 nextButton.addEventListener("click", () => {
     if (currentQuestionIndex < gameQuestions.length) {
         handleNextButton();
+        startCountdown();
     } else {
         quizStartUp();
     }

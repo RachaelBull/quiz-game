@@ -87,6 +87,14 @@ body {
     padding: 30px;
 }
 
+#timer {
+    font-weight: bold;
+    border: 2px solid;
+    font-size: 120%;
+    padding: 15px;
+    background-color: #000000;
+}
+
 #user-score {
     text-transform: uppercase;
     padding: 20px;
@@ -101,7 +109,7 @@ body {
 }
 
 #question {
-    padding-bottom: 15px;
+    padding: 20px 0;
 }
 
 .option:hover {
