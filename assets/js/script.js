@@ -160,10 +160,13 @@ function selectAnswer(e) {
     if (isCorrect) {
         selectedBtn.classList.add("correct");
         answeredCorrect++;
+        stopCountdown();
     } else {
         selectedBtn.classList.add("incorrect");
         answeredIncorrect++;
+        stopCountdown();
     }
+    buttonControls();
 }
 
 function showScore() {
@@ -191,6 +194,22 @@ function startCountdown() {
             clearInterval(timer);
         }
     }, 1000);
+}
+
+function stopCountdown() {
+    clearInterval(timer);
+    document.getElementById("timer").innerHTML = '';
+}
+
+function buttonControls() {
+    Array.from(button.children).forEach(button => {
+        if(button.dataset.correct === "true") {
+            button.classList.add("correct");
+        } else {
+            button.classList.add('wrong');
+        }
+        button.setAttribute('disabled', true);
+    });
 }
 
 nextButton.addEventListener("click", () => {
