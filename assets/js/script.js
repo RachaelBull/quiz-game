@@ -115,13 +115,6 @@ const nextButton = document.getElementById("continue");
 
 let currentQuestionIndex = 0;
 
-
-const checkList = [];
-// Targetting user score elements
-let answeredCorrect = document.getElementById("users-correct");
-let answeredIncorrect = document.getElementById("users-incorrect");
-let questionIndex = 0;
-
 function quizStartUp() {
     currentQuestionIndex = 0;
     answeredCorrect = 0;
@@ -164,7 +157,6 @@ function selectAnswer(e) {
     } else {
         selectedBtn.classList.add("incorrect");
         answeredIncorrect++;
-        button.style.display = "#ff3333";
         stopCountdown();
     }
     buttonControls();
@@ -175,6 +167,7 @@ function showScore() {
     questionArea.innerHTML = `You scored ${answeredCorrect} out of ${gameQuestions.length}!`;
     nextButton.innerHTML = "Play Again";
     nextButton.style.display = "block";
+    timer.style.display = none;
 }
 
 function handleNextButton() {
@@ -203,13 +196,13 @@ function stopCountdown() {
 }
 
 function buttonControls() {
-    Array.from(button.children).forEach(button => {
+    Array.from(answerOptions.children).forEach(button => {
         if(button.dataset.correct === "true") {
             button.classList.add("correct");
         } else {
             button.classList.add("incorrect");
         }
-        button.setAttribute('disabled', true);
+        answerOptions.disabled = true;
     });
 }
 

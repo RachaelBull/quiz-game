@@ -89,10 +89,8 @@ body {
 
 #timer {
     font-weight: bold;
-    border: 2px solid;
-    font-size: 120%;
+    font-size: 150%;
     padding: 15px;
-    background-color: #000000;
 }
 
 #user-score {
