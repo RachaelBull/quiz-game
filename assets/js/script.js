@@ -139,6 +139,7 @@ function showQuestion() {
         }
         button.addEventListener("click", selectAnswer);
     });
+    nextButton.style.display = 'none';
 }
 
 function resetState() {
