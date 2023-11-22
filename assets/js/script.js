@@ -1,3 +1,8 @@
+const playerEntryValue = document.getElementById("users-name");
+const questionArea = document.getElementById("question");
+const answerOptions = document.getElementById("answer-options");
+const nextButton = document.getElementById("continue");
+
 // Specifying which sections to hide upon initial page load
 function initialLoad() {
     document.getElementById("game-area").style.display = 'none';
@@ -6,8 +11,6 @@ function initialLoad() {
 }
 
 initialLoad();
-
-const playerEntryValue = document.getElementById("users-name");
 
 function startGame(event) {
     // Stops the error page being shown after submission - fixed bug    
@@ -109,10 +112,6 @@ let gameQuestions = [
     }
 ];
 
-const questionArea = document.getElementById("question");
-const answerOptions = document.getElementById("answer-options");
-const nextButton = document.getElementById("continue");
-
 let currentQuestionIndex = 0;
 
 function quizStartUp() {
@@ -183,7 +182,7 @@ function handleNextButton() {
 
 function startCountdown() {
     var countBegin = 12;
-    timer = setInterval(function() {
+    timer = setInterval(function () {
         document.getElementById("timer").innerHTML = countBegin;
         countBegin--;
         if (countBegin < 0) {
@@ -203,7 +202,7 @@ function stopCountdown() {
 
 function buttonControls() {
     Array.from(answerOptions.children).forEach(button => {
-        if(button.dataset.correct === "true") {
+        if (button.dataset.correct === "true") {
             button.classList.add("correct");
         } else {
             button.classList.add("incorrect");
@@ -221,5 +220,4 @@ nextButton.addEventListener("click", () => {
         startCountdown();
     }
 });
-
 quizStartUp();
