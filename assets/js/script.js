@@ -164,6 +164,7 @@ function selectAnswer(e) {
     } else {
         selectedBtn.classList.add("incorrect");
         answeredIncorrect++;
+        button.style.display = "#ff3333";
         stopCountdown();
     }
     buttonControls();
@@ -206,7 +207,7 @@ function buttonControls() {
         if(button.dataset.correct === "true") {
             button.classList.add("correct");
         } else {
-            button.classList.add('wrong');
+            button.classList.add("incorrect");
         }
         button.setAttribute('disabled', true);
     });
