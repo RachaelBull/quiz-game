@@ -218,6 +218,7 @@ nextButton.addEventListener("click", () => {
         startCountdown();
     } else {
         quizStartUp();
+        startCountdown();
     }
 });
 
