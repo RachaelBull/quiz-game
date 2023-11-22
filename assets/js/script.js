@@ -186,6 +186,9 @@ function startCountdown() {
         countBegin--;
         if (countBegin < 0) {
             clearInterval(timer);
+            buttonControls();
+            answeredIncorrect++;
+            button.disabled = true;
         }
     }, 1000);
 }
@@ -202,7 +205,7 @@ function buttonControls() {
         } else {
             button.classList.add("incorrect");
         }
-        answerOptions.disabled = true;
+        button.disabled = true;
     });
 }
 
