@@ -160,6 +160,7 @@ function selectAnswer(e) {
         answeredIncorrect++;
         stopCountdown();
     }
+    nextButton.style.display = '';
     buttonControls();
 }
 
@@ -186,6 +187,7 @@ function startCountdown() {
         document.getElementById("timer").innerHTML = countBegin;
         countBegin--;
         if (countBegin < 0) {
+            nextButton.style.display = '';
             clearInterval(timer);
             buttonControls();
             answeredIncorrect++;
