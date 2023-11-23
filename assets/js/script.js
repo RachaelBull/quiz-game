@@ -125,7 +125,7 @@ function startGame(event) {
     startCountdown();
 }
 
-//
+// Small parts of this code is from https://www.youtube.com/watch?app=desktop&v=PBcqGxrr9g8
 function quizStartUp() {
     questionNumber = 0;
     answeredCorrect = 0;

@@ -147,6 +147,28 @@ div > p {
 
 /* Media Queries for mobile view*/
 @media screen and (max-device-width: 576px) {
+    body {
+        height: 100%;
+    }
+
+    #start-area {
+        width: auto;
+    }
+
+    .instructions {
+        font-size: small;
+    }
+
+    .username-label {
+        width: 80%;
+        font-size: small;
+        height: 15px;
+    }
+
+    #launch-game {
+        width: 100%;
+    }
+    
     #start-area {
         max-width: 75%;
         padding: 10%;
