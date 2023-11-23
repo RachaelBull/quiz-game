@@ -205,7 +205,7 @@ function startCountdown() {
             clearInterval(timer);
             buttonControls();
             answeredIncorrect++;
-            button.disabled = true;
+            answerOptions.disabled = true;
         }
     }, 1000);
 }
