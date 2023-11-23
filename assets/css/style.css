@@ -58,6 +58,9 @@ body {
     margin: 10px;
 }
 
+div > p {
+    padding-bottom: 10px;
+}
 .btn {
     font-weight: bolder;
     width: 100%;
@@ -102,8 +105,8 @@ body {
 }
 
 #countdown-area {
-    padding: 20px;
-    font-size: 100%;
+    padding: 10px;
+    font-size: 130%;
 }
 
 #question {

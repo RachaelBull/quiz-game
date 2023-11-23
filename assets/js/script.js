@@ -6,6 +6,7 @@ const nextButton = document.getElementById("continue");
 // Specifying which sections to hide upon initial page load
 function initialLoad() {
     document.getElementById("game-area").style.display = 'none';
+
     // Sets the input field as the focus upon page loadup
     document.getElementById("username").focus();
 }
@@ -147,16 +148,30 @@ function resetState() {
     };
 }
 
+function increaseCorrectScore() {
+    let oldScore = parseInt(document.getElementById("users-correct").innerText);
+    document.getElementById("users-correct").innerText = ++oldScore;
+}
+
+function increaseIncorrectScore() {
+    let oldScore = parseInt(document.getElementById("users-incorrect").innerText);
+    document.getElementById("users-incorrect").innerText = ++oldScore;
+}
+
 function selectAnswer(e) {
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
     if (isCorrect) {
         selectedBtn.classList.add("correct");
         answeredCorrect++;
+        alert(`Indeed! That is the correct answer.`);
+        increaseCorrectScore();
         stopCountdown();
     } else {
         selectedBtn.classList.add("incorrect");
         answeredIncorrect++;
+        alert(`Great choice, though not correct!`);
+        increaseIncorrectScore();
         stopCountdown();
     }
     nextButton.style.display = '';
@@ -220,4 +235,5 @@ nextButton.addEventListener("click", () => {
         startCountdown();
     }
 });
+
 quizStartUp();
