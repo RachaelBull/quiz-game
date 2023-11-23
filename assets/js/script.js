@@ -5,6 +5,7 @@ const answerOptions = document.getElementById("answer-options");
 const nextButton = document.getElementById("continue");
 
 let formComplete = document.getElementById("username-entry");
+let timer;
 
 // Event Listeners
 
