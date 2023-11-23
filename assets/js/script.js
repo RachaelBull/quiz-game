@@ -6,43 +6,9 @@ const nextButton = document.getElementById("continue");
 
 let formComplete = document.getElementById("username-entry");
 let timer;
-let currentQuestionIndex = 0;
+let questionNumber = 0;
 let answeredCorrect;
 let answeredIncorrect;
-
-// Event Listeners
-formComplete.addEventListener('submit', startGame);
-nextButton.addEventListener("click", () => {
-    if (currentQuestionIndex < gameQuestions.length) {
-        handleNextButton();
-        startCountdown();
-    } else {
-        quizStartUp();
-        startCountdown();
-    }
-});
-
-// Specifying which sections to hide upon initial page load
-function initialLoad() {
-    document.getElementById("game-area").style.display = 'none';
-    document.getElementById("username").focus();
-}
-
-initialLoad();
-
-function startGame(event) {
-    // Stops the error page being shown after submission - fixed bug    
-    event.preventDefault();
-    const usersName = document.getElementById("username");
-    playerEntryValue.textContent = usersName.value;
-    // To display the game area and hide the start instructions section
-    document.getElementById("start-area").style.display = 'none';
-    document.getElementById("game-area").style.display = '';
-
-    startCountdown();
-}
-
-// Quiz Questions
 let gameQuestions = [
     {
         question: "Who was named the King of Pop?",
@@ -127,8 +93,41 @@ let gameQuestions = [
     }
 ];
 
+// Event Listeners
+formComplete.addEventListener('submit', startGame);
+nextButton.addEventListener("click", () => {
+    if (questionNumber < gameQuestions.length) {
+        proceedOn();
+        startCountdown();
+    } else {
+        quizStartUp();
+        startCountdown();
+    }
+});
+
+// Specifying which sections to hide upon initial page load
+function initialLoad() {
+    document.getElementById("game-area").style.display = 'none';
+    document.getElementById("username").focus();
+}
+
+initialLoad();
+
+function startGame(event) {
+    // Stops the error page being shown after submission - fixed bug    
+    event.preventDefault();
+    const usersName = document.getElementById("username");
+    playerEntryValue.textContent = usersName.value;
+    // To display the game area and hide the start instructions section
+    document.getElementById("start-area").style.display = 'none';
+    document.getElementById("game-area").style.display = '';
+
+    startCountdown();
+}
+
+//
 function quizStartUp() {
-    currentQuestionIndex = 0;
+    questionNumber = 0;
     answeredCorrect = 0;
     answeredIncorrect = 0;
     nextButton.innerHTML = "Next";
@@ -137,10 +136,12 @@ function quizStartUp() {
     showQuestion();
 }
 
+// Code influenced and obtained from https://www.youtube.com/watch?app=desktop&v=PBcqGxrr9g8
 function showQuestion() {
+    questionArea.style.display = '';
     resetState();
-    let currentQuestion = gameQuestions[currentQuestionIndex];
-    let questionNo = currentQuestionIndex + 1;
+    let currentQuestion = gameQuestions[questionNumber];
+    let questionNo = questionNumber + 1;
     questionArea.innerHTML = questionNo + ". " + currentQuestion.question;
 
     currentQuestion.answers.forEach(answer => {
@@ -156,24 +157,34 @@ function showQuestion() {
     nextButton.style.display = 'none';
 }
 
+/**
+ * Function to reset the current state of the answers area after each question is answered
+ * Code infulenced and obtained from https://www.youtube.com/watch?app=desktop&v=PBcqGxrr9g8
+ */
 function resetState() {
     while (answerOptions.firstChild) {
         answerOptions.removeChild(answerOptions.firstChild);
     };
 }
 
+// Function to increase the correct score when a selected answer is true and correct
 function increaseCorrectScore() {
     let oldScore = parseInt(document.getElementById("users-correct").innerText);
     document.getElementById("users-correct").innerText = ++oldScore;
 }
 
+// Function to increase incorrect score when a selected answer is false and incorrect or the timer runs out
 function increaseIncorrectScore() {
     let oldScore = parseInt(document.getElementById("users-incorrect").innerText);
     document.getElementById("users-incorrect").innerText = ++oldScore;
 }
 
-function selectAnswer(e) {
-    const selectedBtn = e.target;
+/**
+ * Function to determine whether or not the selected answer is correct or incorrect.
+ * Parts of this code is influenced and obtained from https://www.youtube.com/watch?app=desktop&v=PBcqGxrr9g8
+ */
+function selectAnswer(event) {
+    const selectedBtn = event.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
     if (isCorrect) {
         selectedBtn.classList.add("correct");
@@ -192,28 +203,32 @@ function selectAnswer(e) {
     buttonControls();
 }
 
+// Function to display the final score tally when reaching the end of the game, with an option to play again
 function showScore() {
+    questionArea.style.display = 'none';
     resetState();
-    questionArea.innerHTML = `You scored ${answeredCorrect} out of ${gameQuestions.length}!`;
-    nextButton.innerHTML = "Play Again";
+    nextButton.innerHTML = "Give it another shot?";
     nextButton.style.display = "block";
     stopCountdown().style.display = 'none';
 }
 
-function handleNextButton() {
-    currentQuestionIndex++;
-    if (currentQuestionIndex < gameQuestions.length) {
+// Function to proceed through the questions array until the end is reached
+function proceedOn() {
+    questionNumber++;
+    if (questionNumber < gameQuestions.length) {
         showQuestion();
     } else {
         showScore();
     }
 }
 
+// Function to initiate the start of the timer
 function startCountdown() {
     var countBegin = 12;
     timer = setInterval(function () {
         document.getElementById("timer").innerHTML = countBegin;
         countBegin--;
+        // What to display when the timer reaches 0
         if (countBegin < 0) {
             nextButton.style.display = '';
             clearInterval(timer);
@@ -225,11 +240,16 @@ function startCountdown() {
     }, 1000);
 }
 
+// Function to inititate the end of the timer
 function stopCountdown() {
     clearInterval(timer);
     document.getElementById("timer").innerHTML = '';
 }
 
+/**
+ * Function to call the CSS styles once a button has been selected
+ * Code within the function was influenced and partly used from https://www.youtube.com/watch?app=desktop&v=PBcqGxrr9g8
+ */
 function buttonControls() {
     Array.from(answerOptions.children).forEach(button => {
         if (button.dataset.correct === "true") {
