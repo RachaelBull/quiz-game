@@ -1,4 +1,4 @@
-// Declared
+// Declared Variables
 const playerEntryValue = document.getElementById("users-name");
 const questionArea = document.getElementById("question");
 const answerOptions = document.getElementById("answer-options");
@@ -6,14 +6,25 @@ const nextButton = document.getElementById("continue");
 
 let formComplete = document.getElementById("username-entry");
 let timer;
+let currentQuestionIndex = 0;
+let answeredCorrect;
+let answeredIncorrect;
 
 // Event Listeners
+formComplete.addEventListener('submit', startGame);
+nextButton.addEventListener("click", () => {
+    if (currentQuestionIndex < gameQuestions.length) {
+        handleNextButton();
+        startCountdown();
+    } else {
+        quizStartUp();
+        startCountdown();
+    }
+});
 
 // Specifying which sections to hide upon initial page load
 function initialLoad() {
     document.getElementById("game-area").style.display = 'none';
-
-    // Sets the input field as the focus upon page loadup
     document.getElementById("username").focus();
 }
 
@@ -30,8 +41,6 @@ function startGame(event) {
 
     startCountdown();
 }
-
-formComplete.addEventListener('submit', startGame);
 
 // Quiz Questions
 let gameQuestions = [
@@ -117,10 +126,6 @@ let gameQuestions = [
         ]
     }
 ];
-
-let currentQuestionIndex = 0;
-let answeredCorrect;
-let answeredIncorrect;
 
 function quizStartUp() {
     currentQuestionIndex = 0;
@@ -213,6 +218,7 @@ function startCountdown() {
             nextButton.style.display = '';
             clearInterval(timer);
             buttonControls();
+            increaseIncorrectScore();
             answeredIncorrect++;
             answerOptions.disabled = true;
         }
@@ -234,15 +240,5 @@ function buttonControls() {
         button.disabled = true;
     });
 }
-
-nextButton.addEventListener("click", () => {
-    if (currentQuestionIndex < gameQuestions.length) {
-        handleNextButton();
-        startCountdown();
-    } else {
-        quizStartUp();
-        startCountdown();
-    }
-});
 
 quizStartUp();
