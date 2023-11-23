@@ -1,7 +1,12 @@
+// Declared
 const playerEntryValue = document.getElementById("users-name");
 const questionArea = document.getElementById("question");
 const answerOptions = document.getElementById("answer-options");
 const nextButton = document.getElementById("continue");
+
+let formComplete = document.getElementById("username-entry");
+
+// Event Listeners
 
 // Specifying which sections to hide upon initial page load
 function initialLoad() {
@@ -24,8 +29,7 @@ function startGame(event) {
 
     startCountdown();
 }
-// To display a new section upon form submission
-let formComplete = document.getElementById("username-entry");
+
 formComplete.addEventListener('submit', startGame);
 
 // Quiz Questions
@@ -122,6 +126,8 @@ function quizStartUp() {
     answeredCorrect = 0;
     answeredIncorrect = 0;
     nextButton.innerHTML = "Next";
+    document.getElementById("users-correct").innerHTML = "0";
+    document.getElementById("users-incorrect").innerHTML = "0";
     showQuestion();
 }
 
