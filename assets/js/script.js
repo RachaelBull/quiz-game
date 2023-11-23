@@ -114,6 +114,8 @@ let gameQuestions = [
 ];
 
 let currentQuestionIndex = 0;
+let answeredCorrect;
+let answeredIncorrect;
 
 function quizStartUp() {
     currentQuestionIndex = 0;
@@ -183,7 +185,7 @@ function showScore() {
     questionArea.innerHTML = `You scored ${answeredCorrect} out of ${gameQuestions.length}!`;
     nextButton.innerHTML = "Play Again";
     nextButton.style.display = "block";
-    timer.style.display = none;
+    stopCountdown().style.display = 'none';
 }
 
 function handleNextButton() {
