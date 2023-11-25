@@ -1,39 +1,28 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Music Quiz
 
-Welcome,
+This short quiz consists of 9 questions based around multiple eras and stages in music history. This quiz is aimed at people wishing to test their musical knowledge or people looking to expand on some musical knowledge.
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+WEB LINK WILL BE HERE
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+AM I RESPONSIVE PHOTO WILL BE HERE
 
-## Codeanywhere Reminders
+## **User and Creator Stories**
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+**User Goals**
 
-`python3 -m http.server`
+- As a user, I would want to be able to easily understand what this quiz is for/about
+- As a user, I would want the game to be attractive and well styled
+- As a user, I would want to easily be able to navigate my way around this quiz
+- As a user, I would want to feel a more personalised experience whilst taking part in the quiz, such as an entered name being adressed throughout the game
+- As a user, I would expect a quiz to track my progress throughout the game, acknowledging which questions the score reflects upon
+- As a user, I would like to feel challenged but not too presured. For example, having a timer but not a timer that would be so short it would deter me from playing again
+- As a user, I would like to have the option to restart the game, without having to enter my details again
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+**Creator Goals**
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
-
-`http_server`
-
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
-
-A button should appear to click: _Open Preview_ or _Open Browser_.
-
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
----
-
-Happy coding!
+- As a creator, I want to provide a warm and attractive landing page to entise the user the stay on the page
+- As a creator, I want to ensure the instructions and landing information section is clear and concise to the user
+- As a creator, I want to make sure that my content is relevent and interesting
+- As a creator, I want my interactive features such as score keeping and the countdown to be clearly stated and easily navigated
+- As a creator, I want the user to easily be able to play again
+- As a creator, I want the user to feel as though the game is personalised to them such as using the entered name throughout the game and keeping personal scores
