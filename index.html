@@ -34,13 +34,13 @@
             <p>Test your music knowledge with this short quiz, running you through numerous decades!
             </p>
             <p>This quiz however is timed, you will have 12 seconds to choose your answer</p>
-            <p>You will find out how well you scored when you reach the end of the quiz, where you can try again!</p>
+            <p>Throughout the quiz you will see a tally of your correct and incorrect scores at the top of the game, good luck!</p>
             </div>
         <form id="username-entry" action="quiz" method="post">
             <div>
                 <label for="username" class="username-label">Please enter your player name:</label>
                 <br>
-                <input type="text" id="username" name="username" placeholder="Enter Name" required>
+                <input type="text" id="username" name="username" placeholder="Enter Name" maxlength="10" required>
                 <br>
             </div>
             <button type="submit" id="launch-game" class="btn">Let's Go!</button>
