@@ -6,6 +6,7 @@ const nextButton = document.getElementById("continue");
 
 let formComplete = document.getElementById("username-entry");
 let timer;
+let timerDisplay = document.getElementById("timer");
 let questionNumber = 0;
 let answeredCorrect;
 let answeredIncorrect;
@@ -205,11 +206,11 @@ function selectAnswer(event) {
 
 // Function to display the final score tally when reaching the end of the game, with an option to play again
 function showScore() {
+    timerDisplay.style.display = 'none';
     questionArea.style.display = 'none';
     resetState();
     nextButton.innerHTML = "Give it another shot?";
     nextButton.style.display = "block";
-    stopCountdown().style.display = 'none';
 }
 
 // Function to proceed through the questions array until the end is reached
