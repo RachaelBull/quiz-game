@@ -149,11 +149,18 @@ div > p {
 @media screen and (max-device-width: 576px) {
     body {
         background: rgba(181, 181, 196, 0.36) url("../images/background.jpg") no-repeat center center/cover;
-        background-size: cover;
+        height: 100vh;
+
     }
 
     #start-area {
         width: auto;
+        top: 5%;
+    }
+
+    #start-area p {
+        font-size: small;
+        font-style: normal;
     }
 
     .instructions {
@@ -172,7 +179,23 @@ div > p {
     }
 
     #game-area {
-        top: 3%;
+        top: 2%;
+    }
+
+    #question {
+        font-size: 100%;
+    }
+
+    .btn {
+        font-size: 70%;
+    }
+
+    #user-score {
+        font-size: medium;
+    }
+
+    #timer {
+        font-size: 100%;
     }
 
     
