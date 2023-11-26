@@ -119,4 +119,37 @@ there is some placeholder text within the input field to prompt the user to fill
 ![](docs/game-submit.png)
 
 - Placed closely underneath the input field is the submit button which will take the user to the start of the quiz upon the event of a click and the field being filled out correctly. The styling of this button is also soft, still using the same font as the rest of the page to keep that soft, simple and clean look throughout the page. However, the background colour has been ever so slighly changed to an off white/ light grey color and the text set darker to black. This was the give the user something a little different to look at to stand the button out from the rest of the contents without having to add any new dramatic colourings to the page that aren't already being used at some point in the page.
+
+*Quiz Area*
+
+![](docs/game-quiz.png)
+
+- Once the submit button has been clicked, the user will be taken to the quiz section of the page and the starting instructions area will become hidden. Below will be the listed features of the quiz area:
+
+![](docs/quiz-name.png)
+
+- The first part of the section that the user will see is the personailsed username section that will take the user input from the input field from the previous section and display it at the top of the page throughout the rest of the game. Below this is also the scorekeeping section, which will go up in numbers everytime the user gets answers a question correctly or incorrectly. The text here is set to uppercase and is slightly bigger than the question text, making it easily visible if the user wishes to keep checking up on their score throughout the game.
+
+![](docs/game-timer.png)
+
+- Just below the personalised username and score keeping section, the user will be presented with a timer that counts down from 12 seconds. This timer is located in the center of the section - making it easy for the user to keep track of the time without struggle of locating it on the page. The timer is presented quite big so that it's visible to the user, but not too big that it would cause the user to become stressed or pressured, resulting in a better user experience.
+
+![](docs/game-question.png)
+
+- Below the timer a question is presented the user in a numbered order. This text style for the question is set to lowercase to try and create a softer more chilled approach rather than a rushed and pressured approach which I feared would be the case had I have used capitalized lettering. The questions run from 1-9 depending on what stage you are at in the quiz. A different question of a different topic or era is presented at each completion to the previous question, until the user has reached the end. The question text sizing is set slightly smaller than the contents just above, to again create a more chilled approach and not force the user to feel pressured.
   
+![](docs/game-answers.png)
+
+- Under the question the user will be given 4 option boxes to choose from. These are kept breif and simple with not too much text as the user doesn't have a lot of time to answer the question. The background colour of the option boxes are set to white and the text to back just to break up the page a little and give a clear indication to the user that these answers are to be selected.
+
+*Below are the explained features of the timer and option buttons combined:*
+
+![](docs/game-explained.png)
+
+- Shown above is showing some of the game functions happening once the timer runs to 0 and once an answer is answered correctly or incorrectly - this will be explained part by part past this point.
+
+![](docs/timer-scores.png)
+
+- Once the timer hits 0 the incorrect score tally will automatically go up by 1 as the user didn't select an answer within the stated time period. This particular function also takes place when the user selects an incorrect answer.
+
+![](docs/timer-answers.png)
