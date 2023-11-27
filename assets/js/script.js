@@ -113,7 +113,7 @@ function initialLoad() {
 initialLoad();
 
 function startGame(event) {
-    // Stops the error page being shown after submission - fixed bug    
+    // Stops the error page being shown after submission - code originally found https://www.w3schools.com/jsref/event_preventdefault.asp
     event.preventDefault();
     const usersName = document.getElementById("username");
     playerEntryValue.textContent = usersName.value;
@@ -166,7 +166,7 @@ function showQuestion() {
 function resetState() {
     while (answerOptions.firstChild) {
         answerOptions.removeChild(answerOptions.firstChild);
-    };
+    }
 }
 
 // Function to increase the correct score when a selected answer is true and correct
