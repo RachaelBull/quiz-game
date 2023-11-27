@@ -4,7 +4,7 @@ This short quiz consists of 9 questions based around multiple eras and stages in
 
 [Visit the live project here](https://rachaelbull.github.io/quiz-game/)
 
-AM I RESPONSIVE PHOTO WILL BE HERE
+![](docs/responsive.png)
 
 ## **User and Creator Stories**
 
@@ -68,21 +68,6 @@ The colors my project consists of are:
 - Dark Grey - used with a transparency effect as the background colour for the section areas
 - Off White - used as the background colour for most of the buttons across the project
 - Red - used as some button background colours to display incorrect answers
-
-## **Skeleton Plane** ##
-
-WIREFRAMES WILL GO HERE
-
-Above is the initial wireframe draft of the game. Please note that the finished project website may differ slightly from this.
-
-As well as creating the wireframes to help guide me, I also used a hand drawing version on pen and paper, this made it easier for smaller changes I would think about and quickly gain a visual through drafting them down on paper.
-
-DIFFERENCES IN WIREFRAMES SECTION WILL GO HERE
-
-//////
-/////
-//////
-//////
 
 ## **Surface Plane** ##
 
@@ -204,6 +189,53 @@ With further knowledge and experience I would like to expland onto this project 
   - No errors were found when running my CSS code through the CSS Validator.
 - [W3C Markup Validator](https://validator.w3.org/)
   - No errors were found when running my HTML code through the HTML Validator.
+- [JSHint JavaScript Validator](https://jshint.com/)
+  - No errors were found when running my JavaScript code through the JavaScript Validator.
+
+During development the project was being constantly tested to check the responsiveness and functionality.
+
+- The project was tested on the following following browsers with success, Google Chrome and Safari.
+- The project was manually tested on the following mobile devices with success, Iphone 11 and Iphone 13.
+- Google Chrome Developer tools were used throughout the project to help me to test the responsiveness across devices.
+
+*Input field testing*
+
+![](docs/testing-form.png)
+
+*Start area lighthouse report*
+
+![](docs/testing-start.png)
+
+**User Stories Testing**
+
+- As a user, I would want to be able to easily understand what this quiz is for/about:
+The home page acts as a simple introduction to the project to inform the user of the project purpose and some basic instructions - getting the user ready for the quiz.
+- As a user, I would want the game to be attractive and well styled:
+The colors and font used on the project were designed to be simple and easy to read, with a focus on simplicity over design. The hero image in the background is also simple yet visually appealing to the user.
+- As a user, I would want to feel a more personalized experience whilst taking part in the quiz, such as an entered name being addressed throughout the game:
+The user is asked to input a username before beginning the quiz, with some HTML validation to make sure no empty inputs are passed. The user is then shown their user name through the quiz to provide a more personalized experience.
+- As a user, I would expect a quiz to track my progress throughout the game, acknowledging which questions the score reflects upon:
+The user is constantly shown how many questions they have answered correct and incorrect, so that they are constantly aware of the progress through the quiz.
+- As a user, I would like to feel challenged but not too pressured. For example, having a timer but not a timer that would be so short it would deter me from playing again:
+A timer of 12 seconds is set for the user to answer a question. If no answer is selected then the question is marked as incorrect. This timer was based on user feedback, as it would allow the user enough time to read the question and think about an answer, whilst also allowing the user to proceed through the course in a timely manner.
+- As a user, I would like to have the option to restart the game, without having to enter my details again:
+When the quiz ends, the user is shown the correct score and has the option to play the quiz again without having to go through the process of adding a user name again.
+Something else that was also added to the project based on user feedback was a simple browser alert to allow users to understand if the answer is correct or incorrect - avoiding the assumption that the user is familiar with quizzes. Although there is a CSS class being added to incorrect answers after an answer is picked, I felt the alert added something for potentially visually impaired users.
+
+## **Bugs** ##
+
+At the start of the project I came across an error which took the user to an error page once the form was submitted. I resolved this by preventing the default actions in my javascript code to allow the user to move easily through to the next displayed section in the project.
+
+*Timer bug and fixed solution*
+
+![](docs/fixed-timer.png)
+Here the console was showing an error for hiding the stop countdown function. My solution to this was to hide the HTML rather than the function and the HTML element that the timer was wrongly incremementing on the play again page.
+
+![](docs/fixed-function.png)
+Here the countdown function was being called in multiple places, causing the timer to bug out if the user was to click the play again button as there was more than one event taking place regarding the function.
+
+![](docs/fixed-events.png)
+Here I fixed the countdown function solution by calling the function within event listeners rather than within section loads, preventing the timer multiple call bugs and stopping the incremementing scores when the user was not playing.
 
 ## **Deployment** ##
 
@@ -243,3 +275,6 @@ View or make changes to a repository without affecting the original
 
 - Some code with comments above in the JavaScript file were influenced and found in [This video](https://www.youtube.com/watch?v=PBcqGxrr9g8)
 - Some code was inspired by [Love Maths](https://github.com/AleksandarJavorovic/love-maths)
+- The prevent default function was found  [Here](https://www.w3schools.com/jsref/event_preventdefault.asp)
+
+- Background image obtained from [Shutterstock](https://www.shutterstock.com/discover/stock-assets-uk-0220?cr=bc&ds_ag=FF%3DFree_Stock-Images_AU%3DProspecting&ds_agid=58700001308364499&ds_cid=71700000014839559&ds_eid=700000001391652&gclid=CjwKCAjwg4SpBhAKEiwAdyLwvGy9FmZzKZUlek-DFEclBgvBJLaJhmvDRiqpJj7hmW1B46AGAPxi6BoCCNwQAvD_BwE&gclsrc=aw.ds&kw=completely%20free%20stock%20images&pl=PPC_GOO_UK_IG-347517002771&utm_campaign=CO%3DUK_LG%3DEN_BU%3DIMG_AD%3DGENERIC_TS%3Dlggeneric_RG%3DEUAF_AB%3DACQ_CH%3DSEM_OG%3DCONV_PB%3DGoogle&utm_medium=cpc&utm_source=GOOGLE)
