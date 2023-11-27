@@ -149,15 +149,14 @@ div > p {
 }
 
 /* Media Queries for mobile view*/
-@media screen and (max-device-width: 576px) {
+@media screen and (max-width: 576px) {
     body {
         background: rgba(181, 181, 196, 0.36) url("../images/background.jpg") no-repeat center center/cover;
-        height: 100vh;
-
     }
 
     #start-area {
-        width: 100%;
+        max-width: 99%;
+        padding: 10%;
         top: 5%;
     }
 
@@ -199,12 +198,6 @@ div > p {
 
     #timer {
         font-size: 100%;
-    }
-
-    
-    #start-area {
-        max-width: 75%;
-        padding: 10%;
     }
 
     #username {
