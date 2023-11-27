@@ -157,7 +157,7 @@ div > p {
     }
 
     #start-area {
-        width: auto;
+        width: 100%;
         top: 5%;
     }
 

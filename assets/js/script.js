@@ -2,6 +2,7 @@
 const playerEntryValue = document.getElementById("users-name");
 const questionArea = document.getElementById("question");
 const answerOptions = document.getElementById("answer-options");
+const goButton = document.getElementById("launch-game");
 const nextButton = document.getElementById("continue");
 
 let formComplete = document.getElementById("username-entry");
@@ -98,10 +99,8 @@ formComplete.addEventListener('submit', startGame);
 nextButton.addEventListener("click", () => {
     if (questionNumber < gameQuestions.length) {
         proceedOn();
-        startCountdown();
     } else {
         quizStartUp();
-        startCountdown();
     }
 });
 
@@ -121,23 +120,25 @@ function startGame(event) {
     // To display the game area and hide the start instructions section
     document.getElementById("start-area").style.display = 'none';
     document.getElementById("game-area").style.display = '';
-
-    startCountdown();
 }
 
 // Small parts of this code is from https://www.youtube.com/watch?app=desktop&v=PBcqGxrr9g8
 function quizStartUp() {
+    goButton.addEventListener('click', startCountdown);
     questionNumber = 0;
     answeredCorrect = 0;
     answeredIncorrect = 0;
     nextButton.innerHTML = "Next";
     document.getElementById("users-correct").innerHTML = "0";
+    document.getElementById("incorrect-line").style.display = '';
+    document.getElementById("timer-both").style.display = '';
     document.getElementById("users-incorrect").innerHTML = "0";
     showQuestion();
 }
 
 // Code influenced and obtained from https://www.youtube.com/watch?app=desktop&v=PBcqGxrr9g8
 function showQuestion() {
+    stopCountdown();
     questionArea.style.display = '';
     resetState();
     let currentQuestion = gameQuestions[questionNumber];
@@ -155,6 +156,7 @@ function showQuestion() {
         button.addEventListener("click", selectAnswer);
     });
     nextButton.style.display = 'none';
+    nextButton.addEventListener('click', startCountdown);
 }
 
 /**
@@ -205,11 +207,13 @@ function selectAnswer(event) {
 
 // Function to display the final score tally when reaching the end of the game, with an option to play again
 function showScore() {
+    stopCountdown();
+    document.getElementById("incorrect-line").style.display = 'none';
+    document.getElementById("timer-both").style.display = 'none';
     questionArea.style.display = 'none';
     resetState();
     nextButton.innerHTML = "Give it another shot?";
     nextButton.style.display = "block";
-    stopCountdown().display = 'none';
 }
 
 // Function to proceed through the questions array until the end is reached
