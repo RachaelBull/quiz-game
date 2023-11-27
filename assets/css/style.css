@@ -1,9 +1,10 @@
+/* Basic styling to override default */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-
+/* General Styles */
 body {
     background: rgba(181, 181, 196, 0.36) url("../images/background.jpg") no-repeat center center/cover;
     height: 100vh;
@@ -15,6 +16,7 @@ body {
     text-align: center;
 }
 
+/* Starting rules/instructions area */
 #start-area {
     max-width: 700px;
     border: 2px solid #000000;
@@ -39,7 +41,7 @@ body {
     font-weight: bold;
     padding: 5px;
 }
-
+/* User input field section */
 .username-label {
     text-transform: uppercase;
     text-decoration: underline;
@@ -80,6 +82,7 @@ div > p {
     text-transform: uppercase;
 }
 
+/* Start of the quiz area section */
 #game-area {
     max-width: 700px;
     border: 2px solid #000000;
@@ -134,7 +137,7 @@ div > p {
     width: 75%;
     padding-left: 25%;
 }
-
+/* Styling to show correct and incorrect score colours */
 .correct {
     background-color: white;
     color: #000000;

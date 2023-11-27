@@ -116,6 +116,10 @@ informs the user on what features they should expect if they are to progress pas
 - Underneath the game rules and information area, the user will be very clearly presented with an input field with a label guiding the user to enter a username which will be carried through to the rest of the game. To make the input a field more understandable
 there is some placeholder text within the input field to prompt the user to fill in their name before progressing onto the submit button which will be presented underneath the input field. Above the input field there is an underlined statement asking the user to enter their chosen name. This text is white to flow nicely with the rest of the page styles and to keep the page looking clean, pristine and tidy. An uppercase text transform has been applied to this with an underlining styling to highlight the importance of this feild being completed without the need to change any fonts or colouring of the text to create the same desired effect.
 
+![](docs/testing-input.png)
+
+- Here the user won't be able to progress any further through the website and the game until they have filled out the required input box.
+
 ![](docs/game-submit.png)
 
 - Placed closely underneath the input field is the submit button which will take the user to the start of the quiz upon the event of a click and the field being filled out correctly. The styling of this button is also soft, still using the same font as the rest of the page to keep that soft, simple and clean look throughout the page. However, the background colour has been ever so slighly changed to an off white/ light grey color and the text set darker to black. This was the give the user something a little different to look at to stand the button out from the rest of the contents without having to add any new dramatic colourings to the page that aren't already being used at some point in the page.
@@ -153,3 +157,89 @@ there is some placeholder text within the input field to prompt the user to fill
 - Once the timer hits 0 the incorrect score tally will automatically go up by 1 as the user didn't select an answer within the stated time period. This particular function also takes place when the user selects an incorrect answer.
 
 ![](docs/timer-answers.png)
+
+- After the timer runs down to 0 without an answer being selected the answer options will automatically have their backgrounds turn red and the text turn white - except for the correct answer option, this one will keep the original styling. Once an answer has been selected within the time frame given the answer options will also take this form. The red indicated to the user that 3 of the 4 options were incorrect and the one left alone was the correct answer. Just incase this isn't all that clear to the user a pop up has been added that the user can read for confirmation before the buttons take their correct or incorrect colouring state, avoiding assuming that the user is familiar with quiz based games.
+
+![](docs/incorrect-popup.png)
+![](docs/correct-popup.png)
+
+- One of these popups will be shown to the user upon an answer selection before the answer options take their incorrect or correct colour state. The first incorrect statement will be alerted to the user at the top of the page if an answer has been chosen incorrectly, clearly letting the user know how they answered the question and how to expect the tally to look like upon submitting the answer and moving onto the next, and the same will apply if the user answered correctly, except the second message will be displayed to the user instead.
+
+![](docs/timer-next.png)
+
+- The next button needed for the user to click to progress further through the questions of the quiz will be presented only once the user has selected an answer or the timer has ran out and has closed the pop up message that will appear at the top. This clearly tells the user that the questions have to be answered whilst on that same page and that the questions cannot be skipped through. This button is set to hidden until this event takes place.
+
+![](docs/game-ending.png)
+
+- Once the user reaches question 9 and has clicked the next button they will be taken to this page which acts like a conclusion section, clearly displaying the users selected name and tally results of how many questions were answered correctly and incorrectly. The next button is then slightly changed - the text is changed to 'Give it another shot?' telling the user that if they so wish, they can try the quiz again.
+
+With further knowledge and experience I would like to expland onto this project and add more complicated features such as a player against computer mechanism.
+
+## **Technologies Used** ##
+
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+  - Used as the basic building block for the project and to structure the content.
+- [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
+  - Used to style all the web content across the project.
+- [Google Fonts](https://fonts.google.com/)
+  - Used to import the fonts linked in the header.
+- [Google Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+  - Used as a primary method of finding bugs and testing responsiveness of all pages in the website.
+- [GitHub](https://github.com/)
+  - Used to store the project code after being committed and pushed.
+- [Git](https://git-scm.com/)
+  - Used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+- [Balsamiq](https://balsamiq.com/)
+  - Used to create the wireframes for the project.
+- [Google Docs](https://docs.google.com)
+  - Used to fix many grammar and spelling errors.
+- [CSS Color Picker](https://www.w3schools.com/colors/colors_picker.asp)
+  - Used to pick the colours throughout the project.
+- [Favicon.io](https://favicon.io/)
+  - Used to create favicon's for the project website.
+
+## **Testing** ##
+
+- [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+  - No errors were found when running my CSS code through the CSS Validator.
+- [W3C Markup Validator](https://validator.w3.org/)
+  - No errors were found when running my HTML code through the HTML Validator.
+
+## **Deployment** ##
+
+*Github*
+
+This project is deployed using github, please follow the stages below;
+
+1. Go to your GitHub repository section and select the repository you intend to deploy.
+2. Navigate to the 'Settings' link and click it.
+3. Inside the settings page to the left hand side (about halfway down) click the 'Pages' link.
+4. Underneath the source drop-down tab, find the branch drop-down currently selected to 'None'.
+5. Change this branch selection to 'Main' and click 'Save'.
+6. Once the 'Main' branch has been selected and saved, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+
+It can take a few moments for this save to take effect, so people give this refresh some time.
+
+*Forking with Github*
+
+View or make changes to a repository without affecting the original
+
+1. On Github, navigate to the repository.
+2. On the top right hand side of the page, click 'Fork'.
+3. Beneath 'Owner', select the dropdown menu and click an owner for the forked repository.
+
+*Making a Clone*
+
+1. On GitHub.com, navigate to the main page of the repository.
+2. Above the list of files, click 'Code' and copy the link provided.
+3. Open Git Bash.
+4. Change the current working directory to the location where you want the cloned directory.
+5. Type git clone, and then paste the URL you copied earlier.
+6. Press 'Enter' to create your clone.
+
+[Live link to the Repository](https://github.com/RachaelBull/quiz-game)
+
+## **Credits** ##
+
+- Some code with comments above in the JavaScript file were influenced and found in [This video](https://www.youtube.com/watch?v=PBcqGxrr9g8)
+- Some code was inspired by [Love Maths](https://github.com/AleksandarJavorovic/love-maths)
